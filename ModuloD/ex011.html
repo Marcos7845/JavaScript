@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+
+    <p>Qual o país em que está morando hoje?<input type="text" name="txtpais" id="txtpais"></p>
+    <input type="button" value="Verificar" onclick= "verificar()">
+    
+    <div id="estg"></div>
+
+
+    <script>
+        function verificar(){
+        var pais = window.document.getElementById('txtpais')
+        var estg = window.document.getElementById('estg')
+        var paistxt = (pais.value)
+        
+
+        if (paistxt =="Brasil"){
+            estg.innerHTML=`<p> Você é BR raiz</p>`
+        } else{
+            estg.innerHTML=`Você é gringo `
+               
+        }       
+        
+        }
+
+    </script>
+
+</body>
+
+</html>
