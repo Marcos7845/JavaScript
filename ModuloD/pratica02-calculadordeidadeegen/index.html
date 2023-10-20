@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de idade</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            background: rgb(173, 178, 231);
+            margin: 0px;
+            padding: 0px;
+        }
+        header{
+            margin: auto;
+            text-align: center;
+        }
+
+        div, footer{
+            display: block;
+            margin: auto;
+            text-align: center;
+
+        }
+        div,p,input,label{
+            background-color: white;
+            
+        }
+        header,div,footer{
+            width: 500px;
+            height: auto;
+            padding: 20px;    
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Calculador de Idade</h1></header>
+        <div id="dados">
+            <label for="anonasc">Digite o ano em que você nasceu: </label>
+            <input type="number"  name="anonasc" id="anonasc" maxlength="4"><br>
+            <br>
+
+            <Label for="typeh"> Sexo:</Label>
+
+            <input type="radio" name="type" id="type" value="Homem">
+            <label for="typeh">Homem</label>
+
+            <input type="radio" name="type" id="type" Value="Mulher">
+            <label for="typem">Mulher</label> <br>
+        </div>
+        <div>
+        <input type="button" value="Verificar" onclick="verificar()">
+        <p>Preencha os dados acima para verificar!</p>
+        </div>
+        <div id="resultado">
+                    <p>nnn</p>
+                       
+                    <img id="img" src="boy.png" alt=""  > 
+        </div>
+        <footer>
+                <p>MarcosCandido -> @CursoemVideo</p>
+        </footer>
+
+        <script>
+            function verificar(){
+            var type = document.getElementsByName('type')            
+            var anonasc = document.getElementById('anonasc')
+            var res = document.getElementById('resultado')
+            var ano = new Date()
+            var anoatual = ano.getFullYear()
+            var idade = (anoatual-anonasc.value)
+            var gen = '' 
+            var img = getElementById('img').src
+                        
+            if(anonasc.value == 0 || anonasc.value > anoatual){
+            window.alert('[ERROR] por favor preencha o ano')
+            } else { if (type[0].checked){
+                   gen = "Homem"
+                   
+                                          
+
+            } else if(type[1].checked){
+                gen = "Mulher"
+                
+            }
+            
+            res.innerHTML = (`Você é ${gen} com idade de ${idade}`)
+            
+        }
+    }
+    
+        </script>
+
+        
+</body>
+</html>

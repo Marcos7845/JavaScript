@@ -1,3 +1,9 @@
-var a = new Date()
-var b = a.getHours()
-console.log(b)
+            
+            
+            
+            var anonasc=1993
+            var ano = new Date()
+            var anoatual = ano.getFullYear()
+            var anonasc = anonasc
+            var idade = (anoatual-anonasc)
+            console.log(idade)
