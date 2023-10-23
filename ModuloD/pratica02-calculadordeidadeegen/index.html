@@ -54,13 +54,11 @@
         <p>Preencha os dados acima para verificar!</p>
         </div>
         <div id="resultado">
-                    <p>nnn</p>
+                   
                        
-                    <img id="img" src="boy.png" alt=""  > 
+                    <img id="imagem" src ="boy.png" alt=""> 
         </div>
-        <footer>
-                <p>MarcosCandido -> @CursoemVideo</p>
-        </footer>
+       
 
         <script>
             function verificar(){
@@ -70,13 +68,15 @@
             var ano = new Date()
             var anoatual = ano.getFullYear()
             var idade = (anoatual-anonasc.value)
-            var gen = '' 
-            var img = getElementById('img').src
+            var gen = ''
+            var img = document.getElementById('imagem') 
+                
                         
             if(anonasc.value == 0 || anonasc.value > anoatual){
             window.alert('[ERROR] por favor preencha o ano')
-            } else { if (type[0].checked){
-                   gen = "Homem"
+            } else  if (type[0].checked){
+                    gen = "Homem"
+                    imagem.src = "boy.png"
                    
                                           
 
@@ -88,10 +88,12 @@
             res.innerHTML = (`Você é ${gen} com idade de ${idade}`)
             
         }
-    }
+        
     
         </script>
-
+ <footer>
+    <p>MarcosCandido -> @CursoemVideo</p>
+</footer>
         
 </body>
 </html>
