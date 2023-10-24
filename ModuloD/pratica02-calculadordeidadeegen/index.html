@@ -53,11 +53,10 @@
         <input type="button" value="Verificar" onclick="verificar()">
         <p>Preencha os dados acima para verificar!</p>
         </div>
-        <div id="resultado">
-                   
-                       
-                    <img id="imagem" src ="boy.png" alt=""> 
-        </div>
+        <div id="resultado"></div>
+        <div id="foto"></div>
+                                            
+        
        
 
         <script>
@@ -69,27 +68,52 @@
             var anoatual = ano.getFullYear()
             var idade = (anoatual-anonasc.value)
             var gen = ''
-            var img = document.getElementById('imagem') 
+            var img = document.createElement('img') 
+            img.setAttribute('id', 'foto')
                 
                         
             if(anonasc.value == 0 || anonasc.value > anoatual){
             window.alert('[ERROR] por favor preencha o ano')
-            } else  if (type[0].checked){
-                    gen = "Homem"
-                    imagem.src = "boy.png"
+            } else{ if (type[0].checked){
+                        gen='Homem'
+                      
+                             if (idade>0 && idade<=18){
+                                img.setAttribute('src','boy.png')
+                                
+
+                             }else if (idade<60){
+                                img.setAttribute('src','man.png')
+                                
+                             } else{
+                                img.setAttribute('src','idoso.png')
+                                
+                             }
+                    res.innerHTML = (`Você é ${gen} com idade de ${idade} anos `)
+                    res.appendChild(img)
+                    }      
                    
                                           
 
-            } else if(type[1].checked){
-                gen = "Mulher"
+                     if(type[1].checked){
+                        gen = "Mulher"
                 
-            }
+                        if (idade>0 && idade<=18){
+                            img.setAttribute('src','menina.png')
+
+                        }else if (idade<60){
+                            img.setAttribute('src','woman.png')
+                        } else{
+                            img.setAttribute('src','idosa.png')
+                        }
             
-            res.innerHTML = (`Você é ${gen} com idade de ${idade}`)
+                     res.innerHTML = (`Você é ${gen} com idade de ${idade} anos`)
+                     res.appendChild(img)
+                     
             
-        }
         
-    
+                        }
+    } 
+}
         </script>
  <footer>
     <p>MarcosCandido -> @CursoemVideo</p>
