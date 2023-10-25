@@ -6,16 +6,38 @@
     <title>Contador de Números</title>
     <style>
         *{
-            padding: 0;
-            margin: 0;
-           background-color: rgb(151, 151, 233);
-           font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            background: rgb(173, 178, 231);
+            margin: 0px;
+            padding: 0px;
         }
-        div{
-            background-color: white;
-            padding: 10px;
+        header{
+            margin: auto;
+            text-align: center;
+        }
+
+        div, footer{
+            display: block;
+            margin: auto;
+            text-align: center;
 
         }
+        div,p,input,label{
+            background-color: white;
+            
+        }
+        header,div,footer{
+            width: 500px;
+            height: auto;
+            padding: 20px;    
+        }
+        div#footer{
+            margin: auto;
+            padding: auto;
+            background-color: rgb(173, 178, 231);
+        }
+        
     </style>
     
 </head>
@@ -45,24 +67,47 @@
     <script>
         function contar(){
             var inicio = document.getElementById('txtinicio')
-            var inicion = Number(inicio.value)
+            
             var fim = document.getElementById('txtfim')   
             var passo = document.getElementById('txtpasso')
             var resultado = document.getElementById('resultado')
-
-            for(inicio.value;inicio.value=fim.value;inicio.value+=passo.value){
             
-             resultado.innerHTML += (`${inicio.value}`)
+        if(inicio.value.length == 0 || passo.value.length == 0 || passo.value.length == 0){
+            window.alert('[ERRO] FALTAM DADOS')
+
+        } else {
+            resultado.innerHTML = 'contando: <br>'
+
+            var inicion = Number(inicio.value)
+            var fimm = Number (fim.value)
+            var passom= Number(passo.value)
+            if(passom <=0){
+                window.alert('passo invalido, considerando o passo igual a 1')
+                passom = 1
             }
+
+            if(inicion<fimm){
+            for(var r=inicion; r <= fimm;r += passom){
+                resultado.innerHTML += ` ${r} \u{1F449}`
+            }
+            resultado.innerHTML += `\u{1f3c1}`
+             } else {
+            for(var r = inicion; r >=fimm; r -= passom){
+                resultado.innerHTML += ` ${r} \u{1f449} `
+            }
+            resultado.innerHTML += `\u{1f3c1}`
         }
-        
+
+    }
+
+}      
 
 
     </script>
 
 
 
-    <div>
+    <div id ="footer">
        Marcos Candido -> CursoEmVideo
     
     </div>
