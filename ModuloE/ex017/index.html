@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de tabuada</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            
+        }
+        header{
+            margin: auto;
+            text-align: center;
+        }
+        body{
+            background-color: rgb(229, 212, 236);
+        }
+
+        div,footer{
+            margin: auto;
+            text-align: center;
+
+        }
+        div#dados{
+            background-color: white;
+            border-radius: 10px 10px 0px 0px;
+            padding-top: 10px;
+        
+            
+        }
+        div#res{
+            background-color: white;
+            border-radius: 0px 0px 10px 10px;
+            padding-bottom: 10px;
+        }
+          
+            
+        
+        header, div{
+            width: 500px;
+            height: auto;
+                
+        }
+        div#limpar{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Gerador de Tabuada</h1></header>
+        <div id="dados">
+            <label for="anonasc">Digite o numero que você quer saber a tabuada </label>
+            <input type="number"  name="txtn" id="txtn"><br>
+            <input type="button" value="tabuada" onclick="tabuada()"><br>
+
+            
+        </div>
+        <div id="res">
+        
+        <select name="tabuada" id="tabuada" size="10">
+            <option>Digite um valor</option>
+        </select>
+        
+        </div>
+        <div id="limpar">
+            <button type="reset" value="limpar" onclick="limpar()">limpar</button>
+        </div>
+                                            
+        
+       
+
+        <script>
+            function tabuada(){
+                var num = document.getElementById('txtn')
+                var tab = document.getElementById('tabuada')
+
+                if(num.value.length == 0){
+                    window.alert('Por favor, digite um número diferente de zero')
+                } else {
+                    let n = Number(txtn.value)
+                    let c = 1
+                    tab.innerHTML=''
+                    while (c<=10){
+                        let item = document.createElement('option')
+                        item.text = `${n} x ${c} = ${n*c}`
+                        item.value = `tab${c}`
+                        tab.appendChild(item)
+                        c++
+                    }
+                }
+
+
+            }
+
+            function limpar (){
+                var tab = document.getElementById('tabuada')
+                tab.innerHTML ='<p>Digite um valor</p>'
+            }
+           /* var type = document.getElementsByName('type')            
+            var anonasc = document.getElementById('anonasc')
+            var res = document.getElementById('resultado')
+            var ano = new Date()
+            var anoatual = ano.getFullYear()
+            var idade = (anoatual-anonasc.value)
+            var gen = ''
+            var img = document.createElement('img') 
+            img.setAttribute('id', 'foto')
+                
+                        
+            if(anonasc.value == 0 || anonasc.value > anoatual){
+            window.alert('[ERROR] por favor preencha o ano')
+            } else{ if (type[0].checked){
+                        gen='Homem'
+                      
+                             if (idade>0 && idade<=18){
+                                img.setAttribute('src','boy.png')
+                                
+
+                             }else if (idade<60){
+                                img.setAttribute('src','man.png')
+                                
+                             } else{
+                                img.setAttribute('src','idoso.png')
+                                
+                             }
+                    res.innerHTML = (`Você é ${gen} com idade de ${idade} anos `)
+                    res.appendChild(img)
+                    }      
+                   
+                                          
+
+                     if(type[1].checked){
+                        gen = "Mulher"
+                
+                        if (idade>0 && idade<=18){
+                            img.setAttribute('src','menina.png')
+
+                        }else if (idade<60){
+                            img.setAttribute('src','woman.png')
+                        } else{
+                            img.setAttribute('src','idosa.png')
+                        }
+            
+                     res.innerHTML = (`Você é ${gen} com idade de ${idade} anos`)
+                     res.appendChild(img)
+                     
+            
+        
+                        }
+    } 
+}*/
+        </script>
+ <footer>
+    <p>MarcosCandido -> @CursoemVideo</p>
+</footer>
+        
+</body>
+</html>
